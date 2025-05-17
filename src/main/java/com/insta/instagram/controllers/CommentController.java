@@ -30,6 +30,7 @@ public class CommentController {
 	@Autowired
 	private UserService userService;
 	
+	
 	@PostMapping("/createComment/{postId}")
 	public ResponseEntity<Comment> createComment (@RequestBody Comment comment, @PathVariable Integer postId, @RequestHeader("Authorization") String token) throws Exception {
 		User user = userService.findUserProfile(token);
